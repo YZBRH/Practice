@@ -47,6 +47,7 @@
 
 
 
+
 //int main()
 //{
 //	int a = 3;
@@ -310,13 +311,150 @@
 //}//求两数的最大公约数
 
 
-#include <time.h>
+//#include <time.h>
+//int main()
+//{
+//	time_t timep;
+//	struct tm* p;
+//	time(&timep);
+//	p = localtime(&timep);
+//	printf("year:%04d \nmonth:%02d \nday:%02d \nhour:%02d  \nminter:%02d \nsecond:%02d \nweekday:%d \ndays:%d \nisdst:%d", 1900 + p->tm_year, 1 + p->tm_mon, p->tm_mday, p->tm_hour, p->tm_min, p->tm_sec, p->tm_wday, p->tm_yday, p->tm_isdst);
+//	return 0;
+//}//系统时间
+
+
+//int is_prime(int a)
+//{
+//	int b;
+//	if (a == 2)
+//	{
+//		return 1;
+//	}
+//	for (int i = 2; i < a; i++)
+//	{
+//		if (a % i == 0)
+//		{
+//			b = i;
+//			return 0;
+//		}
+//		return 1;
+//	}
+//}//判断是否为素数
+//int main()
+//{
+//	for (int i = 100; i <= 200; i++)
+//	{
+//		int r = is_prime(i);
+//		if (r == 1)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//
+//	return 0;
+//}
+
+
+
+//int leapYear(int a)
+//{
+//	if ((a % 4 == 0 && a % 100 != 0) || a % 400 == 0)
+//		return 1;
+//	else
+//		return 0;
+//}
+//int  main()
+//{
+//	int a = 0;
+//	printf("输入年份:>>");
+//	scanf("%d", &a);
+//	int r = leapYear(a);
+//	if (r == 1)
+//		printf("是闰年\n");
+//	else
+//		printf("不是闰年\n");
+//	return 0;
+//}//判断闰年
+
+
+//void init(int arr[10])
+//{
+//	for (int i = 0; i < 10; i++)
+//	{
+//		arr[i] = 0;
+//	}
+//}//数组初始化
+//void print(int arr[10])
+//{
+//	for(int i = 0;i< 10;i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}//打印数组元素
+//void reverse(int arr[10])
+//{
+//	int arr1[10];
+//	for (int i = 0; i < 10; i++)
+//	{
+//		arr1[i] = arr[9 - i];
+//	}
+//	for (int i = 0; i < 10; i++)
+//	{
+//		arr[i] = arr1[i];
+//	}
+//}//数组倒序
+
+
+//int main()
+//{
+//	int n = 0;
+//	int i = 1;
+//	int j = 1;
+//	printf("想要多大乘法表？输入数字:>>");
+//	scanf("%d", &n);
+//	while(i <= n)
+//	{
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf("%dx%d=%2d ", i, j, i * j);
+//		}
+//		printf("\n");
+//		i++;
+//	}
+//
+//	return 0;
+//}//任意数字乘法表
+
+
+
+int count = 0;
+void move(char pose1, char pose2)
+{
+	printf("%c->%c ", pose1, pose2);
+	count++;
+}
+//pose1为起始
+//pose2为中专
+//pose3为终点
+void hanoi(int n, char pose1, char pose2, char pose3)
+{
+	if (n == 1)
+	{
+		move(pose1, pose3);
+	}
+	else
+	{
+		hanoi(n - 1, pose1, pose3, pose2);
+		move(pose1, pose3);
+		hanoi(n - 1, pose2, pose1, pose3);
+	}
+}
 int main()
 {
-	time_t timep;
-	struct tm* p;
-	time(&timep);
-	p = localtime(&timep);
-	printf("year:%04d \nmonth:%02d \nday:%02d \nhour:%02d  \nminter:%02d \nsecond:%02d \nweekday:%d \ndays:%d \nisdst:%d", 1900 + p->tm_year, 1 + p->tm_mon, p->tm_mday, p->tm_hour, p->tm_min, p->tm_sec, p->tm_wday, p->tm_yday, p->tm_isdst);
+	int n = 0;
+	printf("汉诺塔上有几个盘子？:>>");
+	scanf("%d", &n);
+	hanoi(n, 'A', 'B', 'C');
+	printf("一共移动了%d次", count);
 	return 0;
-}//系统时间
+}//汉诺塔问题
