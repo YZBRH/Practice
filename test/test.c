@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <string.h>
 //int main()
 //{
 //	int a = 0;
@@ -427,34 +428,154 @@
 
 
 
-int count = 0;
-void move(char pose1, char pose2)
-{
-	printf("%c->%c ", pose1, pose2);
-	count++;
-}
-//pose1为起始
-//pose2为中专
-//pose3为终点
-void hanoi(int n, char pose1, char pose2, char pose3)
-{
-	if (n == 1)
-	{
-		move(pose1, pose3);
-	}
-	else
-	{
-		hanoi(n - 1, pose1, pose3, pose2);
-		move(pose1, pose3);
-		hanoi(n - 1, pose2, pose1, pose3);
-	}
-}
-int main()
-{
-	int n = 0;
-	printf("汉诺塔上有几个盘子？:>>");
-	scanf("%d", &n);
-	hanoi(n, 'A', 'B', 'C');
-	printf("一共移动了%d次", count);
-	return 0;
-}//汉诺塔问题
+//int count = 0;
+//void move(char pose1, char pose2)
+//{
+//	printf("%c->%c ", pose1, pose2);
+//	count++;
+//}
+////pose1为起始
+////pose2为中专
+////pose3为终点
+//void hanoi(int n, char pose1, char pose2, char pose3)
+//{
+//	if (n == 1)
+//	{
+//		move(pose1, pose3);
+//	}
+//	else
+//	{
+//		hanoi(n - 1, pose1, pose3, pose2);
+//		move(pose1, pose3);
+//		hanoi(n - 1, pose2, pose1, pose3);
+//	}
+//}
+//int main()
+//{
+//	int n = 0;
+//	printf("汉诺塔上有几个盘子？:>>");
+//	scanf("%d", &n);
+//	hanoi(n, 'A', 'B', 'C');
+//	printf("一共移动了%d次", count);
+//	return 0;
+//}//汉诺塔问题
+
+
+//int main()
+//{
+//	int money = 20;
+//	int bottle = 0;
+//	int cola = 0;
+//	int i = 0;
+//	while (money > 0 || bottle > 1 || cola > 0)
+//	{
+//		if (money > 0)
+//		{
+//			money--;
+//			cola++;
+//		}
+//		if (bottle > 1)
+//		{
+//			bottle--;
+//			bottle--;
+//			cola++;
+//		}
+//		if (cola > 0)
+//		{
+//			i += cola;
+//			bottle += cola;
+//			cola = 0;
+//		}
+//	}
+//	printf("共可喝%d瓶可乐", i);
+//	return 0;
+//}//喝可乐问题
+
+
+
+//int main()
+//{
+//	printf("      *\n");
+//	printf("     ***     \n");
+//	printf("    *****    \n");
+//	printf("   *******   \n");
+//	printf("  *********  \n");
+//	printf(" *********** \n");
+//	printf("*************\n");
+//	printf(" *********** \n");
+//	printf("  *********  \n");
+//	printf("   *******   \n");
+//	printf("    *****    \n");
+//	printf("     ***     \n");
+//	printf("      *      \n");
+//
+//	return 0;
+//}//打印菱形
+
+
+//int pow(int a, int b)
+//{
+//	int ret = 1;
+//	for (int i = 1; i <= b; i++)
+//	{
+//		ret *= a;
+//	}
+//	return ret;
+//}//求次方函数
+//int main()
+//{
+//	int i = 0;
+//	int num = 0;
+//	int ret = 0;
+//	int j = 0;
+//	for (i = 0; i < 100000; i++)
+//	{
+//		num = i;
+//		while (num / 10 != 0)
+//		{
+//			num = num / 10;
+//			j++;
+//		}
+//		j++;//统计位数
+//		num = i;
+//
+//		while (num / 10 != 0)
+//		{
+//			ret += pow((num % 10), j);
+//			num = num / 10;
+//		}
+//		ret += pow(num,j);//计算
+//		if (ret == i)
+//		{
+//			printf("%d ", i);
+//		}//比较
+//		j = 0;
+//		ret = 0;//重置
+//
+//	}
+//	return 0;
+//}//求水仙花数
+
+
+
+//int main()
+//{
+//	int a = 0;
+//	printf("请输入一个个位数数：");
+//	scanf("%d", &a);
+//	if (a < 10 && a>0)
+//	{
+//		int a1 = a;
+//		int a2 = a * 10 + a1;
+//		int a3 = a * 100 + a2;
+//		int a4 = a * 1000 + a3;
+//		int a5 = a * 10000 + a4;
+//		int sn = a1 + a2 + a3 + a4 + a5;
+//		printf("求和为%d\n", sn);
+//	}
+//	else
+//	{
+//		printf("无效输入！\n");
+//	}
+//	return 0;
+//}//求和
