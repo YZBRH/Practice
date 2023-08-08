@@ -579,3 +579,250 @@
 //	}
 //	return 0;
 //}//求和
+
+
+//int func(int a)
+//{
+//	if (a <= 2)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return func(a - 1) + func(a - 2);
+//	}
+//}//求数列
+//int main()
+//{
+//	int a = 1;
+//	int ret = 0;
+//	printf("要获取斐波那契数列的第几项？：>>");
+//	scanf("%d", &a);
+//	if (a < 1)
+//	{
+//		printf("无效输入\n");
+//	}
+//	else
+//	{
+//		ret = func(a);
+//		printf("第%d项为%d", a, ret);
+//	}
+//
+//	return 0;
+//}//求第a项的斐波那契数列
+
+
+
+//int ret = 1;
+//int pow(int a, int b)
+//{
+//	if (b == 1)
+//	{
+//		ret *= a;
+//		return ret;
+//	}
+//	else
+//	{
+//		return ret * a * pow(a, b - 1);
+//	}
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int sum = 0;
+//	printf("要求谁的几次方？:>>");
+//	scanf("%d %d", &a, &b);
+//	sum = pow(a, b);
+//	printf("%d", sum);
+//}//递归写次方
+
+
+
+//int DigitSum(int n)
+//{
+//	if (n / 10 == 0)
+//	{
+//		return n;
+//	}
+//	else
+//	{
+//		return (n % 10) + DigitSum(n / 10);
+//	}
+//}
+//int main()
+//{
+//	int n = 0;
+//	printf("请输入一个数:>>");
+//	scanf("%d", &n);
+//	int ret = DigitSum(n);
+//	printf("%d", ret);
+//	return 0;
+//}//计算每位数字之和
+
+
+//int main()
+//{
+//	int n = 0;
+//	int ret = 1;
+//	printf("要求谁的阶乘？:>>");
+//	scanf("%d", &n);
+//	for (int i = 1; i <= n; i++)
+//	{
+//		ret *= i;
+//	}
+//	printf("%d", ret);
+//
+//	return 0;
+//}//求阶乘（非递归）
+
+
+
+//int factorial(int n)
+//{
+//	if (n == 1)
+//	{
+//		return n;
+//	}
+//	else
+//	{
+//		return n * factorial(n - 1);
+//	}
+//}
+//int main()
+//{
+//	int n = 0;
+//	printf("要求谁的阶乘？:>>");
+//	scanf("%d", &n);
+//	int ret = factorial(n);
+//	printf("%d", ret);
+//	return 0;
+////求阶乘（递归）
+
+
+
+//void print(int n)
+//{
+//	if(n / 10 != 0)
+//	{
+//		print(n / 10);
+//	}
+//	printf("%d ", n % 10);
+//}
+//int main()
+//{
+//	int n = 0;
+//	printf("请输入一个数:>>");
+//	scanf("%d", &n);
+//	print(n);
+//	return 0;
+//}//打印各位数
+
+
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,1,2,3,4 };
+//	int i = 0;//计数
+//	for (i = 0; i <= 8; i++)
+//	{
+//		int exp = 0;//判断条件
+//		for (int j = 0; j <= 8; j++)
+//		{
+//			if (i == j)
+//			{
+//				continue;
+//			}
+//			if (arr[i] == arr[j])
+//			{
+//				exp = 1;
+//				break;
+//			}
+//		}
+//		if (exp == 0)
+//		{
+//			printf("%d", arr[i]);
+//		}
+//
+//	}
+//	return 0;
+//}//单身狗1
+
+
+
+//int main()
+//{
+//    int arr[] = { 0,1,2,3,4,5,1,2,3,4 };
+//    int sz = sizeof(arr) / sizeof(arr[0]);
+//    int i = 0;
+//    int ret = 0;
+//    for (i = 0; i < sz; i++)
+//    {
+//        ret ^= arr[i];
+//    }
+//    printf("%d", ret);
+//    return 0;
+//}//单身狗1(优化)
+
+
+
+//int main()
+//{
+//    int n = 0;
+//    scanf("%d", &n);
+//    int count = 0;
+//    for (int i = 0; i < 32; i++)
+//    {
+//        if ((n >> i) & 1 == 1)
+//            count++;
+//    }
+//    printf("%d", count);
+//}//求1的数量
+
+
+
+//int main()
+//{
+//	int a = 5;
+//	int b = 3;
+//	printf("交换前a=%d,b=%d\n", a, b);
+//	a = a ^ b;
+//	b = a ^ b;
+//	a = a ^ b;
+//	printf("交换后a=%d,b=%d\n", a, b);
+//	return 0;
+//}//无临时变量交换两数
+
+
+//int main()
+//{
+//	int a = 1999;
+//	int b = 2299;
+//	int c = a ^ b;
+//	int count = 0;
+//	for (int i = 0; i < 32; i++)
+//	{
+//		if ((c >> i) & 1 == 1)
+//		{
+//			count++;
+//		}
+//	}
+//	printf("%d", count);
+//	return 0;
+//}//求两数二进制中不同的位数
+
+//int main()
+//{
+//	int num = 10086;
+//	for (int i = 31; i >= 1; i -= 2)
+//	{
+//		printf("%d ", (num >> i) & 1);
+//	}
+//	printf("\n");//奇数项
+//
+//	for (int i = 30; i >= 0; i -= 2)
+//	{
+//		printf("%d ", (num >> i) & 1);
+//	}
+//	printf("\n");//偶数项
+//	return 0;
+//}//打印二进制奇偶数
