@@ -810,6 +810,8 @@
 //	return 0;
 //}//求两数二进制中不同的位数
 
+
+
 //int main()
 //{
 //	int num = 10086;
@@ -826,3 +828,63 @@
 //	printf("\n");//偶数项
 //	return 0;
 //}//打印二进制奇偶数
+
+
+
+
+//int my_strlen(char * str)
+//{
+//	int count = 0;
+//	while (*str != '\0')
+//	{
+//		str++;
+//		count++;
+//	}
+//	return count;
+//}
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	int ret = my_strlen(arr);
+//	printf("%d", ret);
+//	return 0;
+//}//自己写strlen
+
+
+
+
+//int main()
+//{
+//	char arr[] = { "ABCDEFG" };
+//	int k = 0;
+//	printf("%s\n", arr);
+//	scanf("%d", &k);
+//	char* p = arr;
+//	int sz = sizeof(arr) / sizeof(arr[0]) - 1;//元素数
+//	for (int i = k; i < sz; i++)
+//	{
+//		printf("%c", *p + i);
+//	}//未左旋元素
+//	for (int i = 0; i < k; i++)
+//	{
+//		printf("%c", *p + i);
+//	}//被左旋元素
+//
+//	return 0;
+//}//字符串左旋
+
+
+
+
+//int main()
+//{
+//    char arr[]= "hello bit";
+//    char* p = arr;
+//    int sz = sizeof(arr)/sizeof(arr[0])-1;//字符串长度
+//    for (int i = sz-1; i >= 0; i--)
+//    {
+//        printf("%c", *(p + i));
+//    }
+//    return 0;
+//}//字符串倒序
+
