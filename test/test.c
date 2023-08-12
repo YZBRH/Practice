@@ -888,3 +888,93 @@
 //    return 0;
 //}//×Ö·û´®µ¹Ðò
 
+
+//int main()
+//{
+//	int arr[] = { 0,1,2,3,4,5,6,7,8,9 };
+//	int* p = arr;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", *p);
+//		p++;
+//	}
+//
+//	return 0;
+//}//Ö¸Õë´òÓ¡Êý×é
+
+
+//void print(int sz, int* arr)
+//{
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}
+//int main()
+//{
+//	int arr[10] = { 9,8,7,6,5,4,3,2,1,0 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (int i = 0; i < sz - 1; i++)
+//	{
+//		for (int j = 0; j < sz - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				int tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//	}
+//	print(sz, arr);
+//
+//	return 0;
+//}//Ã°ÅÝÅÅÐò£¨ÉýÐò£©
+
+
+
+//void print(int sz, int* arr)
+//{
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}
+//int main()
+//{
+//	int arr[10] = { 9,8,7,6,5,4,3,2,1,0 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (int i = 0; i < sz - 1; i++)
+//	{
+//		for (int j = 0; j < sz - 1 - i; j++)
+//		{
+//			if (arr[j] % 2 == 0)
+//			{
+//				int tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//	}
+//	print(sz, arr);
+//
+//	return 0;
+//}//Ã°ÅÝÅÅÐò£¨µ÷ÕûÆæÅ¼Ë³Ðò£©
+
+
+
+//int find(char*arr)
+//{
+//	char tmp[1000] = { 0 };
+//	strcpy(tmp, arr);
+//	strcat(tmp, arr);//Á½´Î¸´ÖÆ
+//	if (strstr(tmp, arr) != NULL)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return 0;
+//	}
+//}//ÅÐ¶Ï×Ö·û´®Ðý×ª½á¹û
