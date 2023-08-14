@@ -978,3 +978,85 @@
 //		return 0;
 //	}
 //}//判断字符串旋转结果
+
+
+
+//int function(int a[3][4], int x, int y, int find)
+//{
+//	int i = 0;
+//	int j = y - 1;
+//	while (a[x - 1][y - 1] >= find && a[0][0] <= find)
+//	{
+//		if (a[i][j] < find)
+//		{
+//			i++;
+//		}
+//		else if (a[i][j] > find)
+//		{
+//			j--;
+//		}
+//		else
+//		{
+//			return 1;
+//		}
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int a[3][4] = { {1,2,3,4},{2,3,4,5},{3,4,5,6}};
+//	int find = 0;
+//	scanf("%d", &find);
+//	int ret = function(a, 3, 4,find);
+//	if (ret == 1)
+//	{
+//		printf("存在此数\n");
+//	}
+//	else
+//	{
+//		printf("不存在此数\n");
+//	}
+//	return 0;
+//}//杨氏矩阵找数据
+
+
+//int main()
+//{
+//	for (int killer = 'A'; killer <= 'D'; killer++)
+//	{
+//		if ((killer != 'A') + (killer == 'C') + (killer == 'D') + (killer != 'D') == 3)
+//		{
+//			printf("凶手是%c", killer);
+//		}
+//	}
+//
+//	return 0;
+//}//谁是凶手
+
+
+
+//int main()
+//{
+//	int n = 20;
+//	int arr[30][30] = { 1 };
+//	for (int i = 0; i < n; i++)
+//	{
+//		arr[i][0] = 1;
+//	}//第一个为一
+//	for (int i = 1; i < n; i++)
+//	{
+//		for (int j = 1; j <= i; j++)
+//		{
+//			arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
+//		}
+//	}//填数据
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = 0; j <= i; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}//打印
+//	return 0;
+//}//打印杨辉三角
