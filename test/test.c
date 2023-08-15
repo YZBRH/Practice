@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 //int main()
 //{
@@ -1060,3 +1061,120 @@
 //	}//打印
 //	return 0;
 //}//打印杨辉三角
+
+
+//void mune()
+//{
+//	printf("************\n");
+//	printf("****1.加法**\n");
+//	printf("****2.减法**\n");
+//	printf("****3.乘法**\n");
+//	printf("****4.除法**\n");
+//	printf("************\n");
+//}
+//int add(int a, int b)
+//{
+//	return a + b;
+//}
+//int sub(int a, int b)
+//{
+//	return a - b;
+//}
+//int mul(int a, int b)
+//{
+//	return a * b;
+//}
+//int div(int a, int b)
+//{
+//	return a / b;
+//}
+//int main()
+//{
+//	int* (*prr[])(int, int) = {0,add, sub, mul, div};
+//	mune();
+//	int n, a, b;
+//	printf("选择执行的运算:>>");
+//	scanf("%d", &n);
+//	printf("请输入执行的两个数字:>>");
+//	scanf("%d %d", &a, &b);
+//	int ret = prr[n](a,b);
+//	printf("%d", ret);
+//	return 0;
+//}//转移表的实现
+
+
+
+//int compare(const void* exp1, const void* exp2)
+//{
+//	return *(int*)exp1 - *(int*)exp2;
+//}
+//int main()
+//{
+//	int arr[] = { 1,3,5,7,9,2,4,6,8,0 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	printf("排序前:>>");
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//	qsort(arr, sz, sizeof(arr[0]), compare);
+//	printf("排序后:>>");
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}//qsort的使用
+
+
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,1,2,3,4,6 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (int i = 0; i < sz; i++)
+//	{
+//		int count = 0;//标记是否有重复元素
+//		for (int j = 0; j < sz; j++)
+//		{
+//
+//			if ((i != j) && (arr[i] == arr[j]))
+//			{
+//				count++;//若有非本身的其他重复元素，则++
+//			}
+//		}
+//		if (count == 0)
+//		{
+//			printf("%d ", arr[i]);//打印“单身狗”
+//		}
+//	}
+//	return 0;
+//}//单身狗2
+
+
+
+//int leapYear(int a)
+//{
+//    if ((a % 4 == 0 && a % 100 != 0) || a % 400 == 0)
+//        return 1;
+//    else
+//        return 0;
+//}//判断是否是闰年
+//int main() {
+//    int a, b;
+//    int arr[13] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };
+//    while (scanf("%d %d", &a, &b) != EOF)
+//    {
+//        int leapyear = leapYear(a);
+//        if (leapyear == 1 && b == 2)
+//        {
+//            printf("%d", arr[b] + 1);
+//        }
+//        else
+//        {
+//            printf("%d", arr[b]);
+//        }
+//        printf("\n");
+//    }
+//    return 0;
+//}//获得每年每月的天数
