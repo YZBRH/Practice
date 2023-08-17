@@ -1178,3 +1178,60 @@
 //    }
 //    return 0;
 //}//获得每年每月的天数
+
+
+
+
+struct stu
+{
+	char name[20];
+	int age;
+};//结构体
+int compare_int(const void* p1,const void* p2)
+{
+	return (*(int*)p1 - *(int*)p2);
+}//比较整型
+int compare_age(const void* p1, const void* p2)
+{
+	return ((struct stu*)p1)->age - ((struct stu*)p2)->age;
+}//比较结构体中年龄
+int compare_name(const void* e1, const void* e2)
+{
+	return strcmp(((struct stu*)e1)->name, ((struct stu*)e2)->name);
+}//比较结构体中名字
+void exchange(void* e1,void* e2,int lenth)
+{
+	for (int i = 0; i < lenth; i++)
+	{
+		char a;
+		a = *((char*)e1+i);
+		*((char*)e1 + i) = *((char*)e2 + i);
+		*((char*)e2 + i) = a;
+	}
+}//交换元素
+void my_qsort(void* arr,size_t sz,size_t lenth,int (*compare)(const void* e1,const void* e2))
+{
+	for (int i = 0; i < sz - 1; i++)
+	{
+		for (int j = 0; j < sz - 1 - i; j++)
+		{
+			if (compare((char*)arr + j * lenth, (char*)arr + (j + 1) * lenth) > 0)
+			{
+				exchange((char*)arr + j * lenth, (char*)arr + (j + 1) * lenth,lenth);
+			}
+		}
+	}
+}//排序部分
+int main()
+{
+	int arr1[] = { 2,3,4,1,5,7,9,8,0 };
+	int sz1 = sizeof(arr1) / sizeof(arr1[0]);
+	my_qsort(arr1, sz1, sizeof(arr1[0]), compare_int);
+
+	struct stu arr2[] = { {"a",12},{"abc",1},{"ab", 123} };
+	int sz2 = sizeof(arr2) / sizeof(arr2[0]);
+	my_qsort(arr2, sz2, sizeof(arr2[0]), compare_age);
+
+	my_qsort(arr2, sz2, sizeof(arr2[0]), compare_name);
+	return 0;
+}//自己写qsort
